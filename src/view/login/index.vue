@@ -56,7 +56,6 @@
 				}
 				this.$http.user.login(data).then(res => {
 					if (res.success) {
-						self.$mToast('登陆成功')
 						self.goto('/index')
 					}
 				}, error => {

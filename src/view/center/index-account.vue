@@ -7,15 +7,15 @@
             <div class="account-info">
                 <div class="info-nick-name">
                     <p>芯儿拽天下</p>
-                    <span>金牌</span>
+                    <span>砖石</span>
                 </div>
                 <div class="info-grade">
                     <div class="grade-item">
-                        <span>京享值3476</span>
+                        <span>京享值23476</span>
                         <i class="iconfont">&#xe62a;</i>
                     </div>
                     <div class="grade-item">
-                        <span>小白心意98.23</span>
+                        <span>小白信誉145.23</span>
                         <i class="iconfont">&#xe62a;</i>
                     </div>
                 </div>

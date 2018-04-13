@@ -8,8 +8,8 @@
                 <span>我的</span>
             </div>
             <div class="header-right">
-                <i class="iconfont">&#xe604;</i>
-                <i class="iconfont">&#xe67a;</i>
+                <i class="iconfont setting">&#xe604;</i>
+                <i class="iconfont msg">&#xe67a;</i>
             </div>
         </div>
         <m-scroll styles="height:100%;" @scroll="handleScroll">
@@ -17,6 +17,7 @@
                 <center-account></center-account>
                 <center-order-coupon></center-order-coupon>
                 <center-track-activity></center-track-activity>
+                <center-jd-financial></center-jd-financial>
             </div>
         </m-scroll>
     </div>
@@ -26,6 +27,7 @@
     import centerAccount from './index-account'
     import centerOrderCoupon from './index-order-coupon'
     import centerTrackActivity from './index-track-activity'
+    import centerJdFinancial from './index-jd-financial'
 
     export default {
         data () {
@@ -58,7 +60,8 @@
         components: {
             centerAccount,
             centerOrderCoupon,
-            centerTrackActivity
+            centerTrackActivity,
+            centerJdFinancial
         },
         methods: {
             handleScroll (e) {

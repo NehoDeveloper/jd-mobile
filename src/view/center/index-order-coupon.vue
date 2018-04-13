@@ -35,11 +35,11 @@
                     <span>优惠券</span>
                 </div>
                 <div class="left-item">
-                    <label>34</label>
+                    <label>8792.00</label>
                     <span>白条</span>
                 </div>
                 <div class="left-item">
-                    <label>5298</label>
+                    <label>10.00</label>
                     <span>京东小金库</span>
                 </div>
             </div>

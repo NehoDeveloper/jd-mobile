@@ -27,5 +27,6 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background: @background-color;
+        font-size: @font-size-normal;
     }
 </style>

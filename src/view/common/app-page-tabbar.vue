@@ -67,7 +67,7 @@
                 line-height: 40px;
             }
             &-active {
-                color: @primary-color;
+                color: @jd-red-color;
             }
         }
     }
