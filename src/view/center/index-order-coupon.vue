@@ -27,7 +27,7 @@
         <div class="center-coupon">
             <div class="order-left border-1px-right">
                 <div class="left-item">
-                    <label>3498</label>
+                    <label>3488</label>
                     <span>京豆</span>
                 </div>
                 <div class="left-item">

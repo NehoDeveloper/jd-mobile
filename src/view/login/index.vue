@@ -181,7 +181,7 @@
             }
         }
         .login-provision {
-            flex-basis: 98px;
+            flex-basis: 88px;
             display: flex;
             justify-content: center;
             align-items: center;

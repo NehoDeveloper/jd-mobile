@@ -30,7 +30,7 @@
         top:0;
         left:0;
         width:100%;
-        height: 98px;
+        height: 88px;
         display: flex;
         background: white;
         .header-left{

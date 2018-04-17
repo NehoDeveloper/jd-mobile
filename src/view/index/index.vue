@@ -15,26 +15,57 @@
                 <i class="iconfont">&#xe67a;</i>
             </div>
         </div>
-        <div class="index-view"></div>
+        <m-scroll styles="height:100%;">
+            <div class="index-view">
+                <m-swipe>
+                    <m-swipe-item :key="key" v-for="(value,key) in swipeList">
+                        <img :src="value.imgUrl" style="width:100%;height: 100%">
+                    </m-swipe-item>
+                </m-swipe>
+            </div>
+        </m-scroll>
     </div>
 </template>
 
 
 <script type="text/ecmascript-6">
-    export default {}
+    export default {
+        data(){
+            return{
+                swipeList:[
+                    {
+                        imgUrl:require('../../static/images/index-swipe-1.webp')
+                    },
+                    {
+                        imgUrl:require('../../static/images/index-swipe-2.webp')
+                    },
+                    {
+                        imgUrl:require('../../static/images/index-swipe-3.webp')
+                    },
+                    {
+                        imgUrl:require('../../static/images/index-swipe-4.webp')
+                    }
+                ]
+            }
+        }
+    }
 </script>
 
 <style lang="less" scoped>
     @import '../../static/less/var';
 
     .index {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
         .index-header {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             box-sizing: border-box;
-            height: 98px;
+            height: 88px;
             display: flex;
             align-items: center;
             padding: 0 @font-size-small;
@@ -44,11 +75,11 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                color: #666666;
+                color: white;
                 i {
-                    flex-basis: 60px;
-                    font-size: 60px;
-                    line-height: 60px;
+                    flex-basis: 50px;
+                    font-size: 50px;
+                    line-height: 50px;
                 }
                 span {
                     flex-grow: 0;
@@ -63,14 +94,14 @@
                     display: flex;
                     align-items: center;
                     flex-basis: 90%;
-                    height: 68px;
-                    border-radius: 40px;
+                    height: 58px;
+                    border-radius: 29px;
                     background: white;
                     color: #666666;
                     i {
                         flex-basis: 20%;
                         text-align: center;
-                        font-size: 50px;
+                        font-size: 40px;
                     }
                     span {
                         flex: 1;
@@ -82,17 +113,13 @@
                 flex-grow: 0;
                 display: flex;
                 justify-content: flex-end;
-                color: #666666;
+                color: white;
                 i {
-                    font-size: 50px;
+                    font-size: 40px;
                 }
             }
         }
         .index-view {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
         }
     }
 </style>

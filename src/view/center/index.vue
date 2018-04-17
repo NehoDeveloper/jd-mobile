@@ -18,6 +18,30 @@
                 <center-order-coupon></center-order-coupon>
                 <center-track-activity></center-track-activity>
                 <center-jd-financial></center-jd-financial>
+                <m-floor :options="specialFloorOptions">
+                    <m-tab>
+                        <m-tab-item active>精选推荐</m-tab-item>
+                        <m-tab-item>我的卧室</m-tab-item>
+                        <m-tab-item>单车部落</m-tab-item>
+                        <m-tab-item>恋上床</m-tab-item>
+                        <m-tab-item>办公神器</m-tab-item>
+                        <m-tab-item>轮滑滑板</m-tab-item>
+                    </m-tab>
+                    <div class="view-recommend">
+                        <div class="recommend-item">
+                            <m-product></m-product>
+                        </div>
+                        <div class="recommend-item">
+                            <m-product></m-product>
+                        </div>
+                        <div class="recommend-item">
+                            <m-product></m-product>
+                        </div>
+                        <div class="recommend-item">
+                            <m-product></m-product>
+                        </div>
+                    </div>
+                </m-floor>
             </div>
         </m-scroll>
     </div>
@@ -30,29 +54,33 @@
     import centerJdFinancial from './index-jd-financial'
 
     export default {
-        data () {
+        data() {
             return {
                 scroll: {
                     currentY: 0
                 },
+                specialFloorOptions: {
+                    headerImg: require('../../static/images/floor-special-bg.jpg'),
+                    headerLeftText: '更多特色推荐'
+                }
             }
         },
         computed: {
-            headerClasses () {
+            headerClasses() {
                 let arrClasses = []
                 arrClasses.push('center-header')
                 if (this.scroll.currentY < -120)
                     arrClasses.push('border-1px-bottom')
                 return arrClasses.join(' ')
             },
-            headerBackground () {
+            headerBackground() {
                 let opacity = 0
                 if (this.scroll.currentY < 0) {
                     opacity = parseFloat(Math.abs(this.scroll.currentY) / 120)
                 }
                 return `RGBA(255,255,255,${opacity})`
             },
-            headerImgVisible () {
+            headerImgVisible() {
                 if (this.scroll.currentY < -120)
                     return true
             }
@@ -64,7 +92,7 @@
             centerJdFinancial
         },
         methods: {
-            handleScroll (e) {
+            handleScroll(e) {
                 this.scroll.currentY = e.y;
             }
         }
@@ -84,7 +112,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 98px;
+            height: 88px;
             display: flex;
             align-items: center;
             z-index: 10;
@@ -96,9 +124,9 @@
                 display: flex;
                 align-items: center;
                 img {
-                    flex-basis: 70px;
-                    height: 70px;
-                    border-radius: 70px;
+                    flex-basis: 60px;
+                    height: 60px;
+                    border-radius: 30px;
                 }
             }
             .header-title {
@@ -119,8 +147,25 @@
                 align-items: center;
                 i {
                     color: white;
+                    font-size: 40px;
                     &:not(:first-child) {
                         margin-left: @font-size-small * 2;
+                    }
+                }
+            }
+        }
+        .center-view {
+            .view-recommend {
+                display: flex;
+                flex-wrap: wrap;
+                .recommend-item {
+                    flex-basis:  calc(~"50% - @{font-size-small} / 2");
+                    flex-grow: 0;
+                    &:nth-child(2n + 1){
+                        margin: 0 @font-size-small / 2 @font-size-small 0;
+                    }
+                    &:nth-child(2n){
+                        margin: 0 0 @font-size-small @font-size-small / 2;
                     }
                 }
             }

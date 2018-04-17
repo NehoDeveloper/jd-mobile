@@ -56,7 +56,7 @@
             bottom: 0;
         }
         .with-header {
-            top: 98px;
+            top: 88px;
         }
         .with-tabbar {
             bottom: 108px;
