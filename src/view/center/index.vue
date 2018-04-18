@@ -8,7 +8,7 @@
                 <span>我的</span>
             </div>
             <div class="header-right">
-                <i class="iconfont setting">&#xe604;</i>
+                <i class="iconfont setting" @click="goto('/account')">&#xe604;</i>
                 <i class="iconfont msg">&#xe67a;</i>
             </div>
         </div>
@@ -28,20 +28,12 @@
                         <m-tab-item>轮滑滑板</m-tab-item>
                     </m-tab>
                     <div class="view-recommend">
-                        <div class="recommend-item">
-                            <m-product></m-product>
-                        </div>
-                        <div class="recommend-item">
-                            <m-product></m-product>
-                        </div>
-                        <div class="recommend-item">
-                            <m-product></m-product>
-                        </div>
-                        <div class="recommend-item">
+                        <div class="recommend-item" :key="key" v-for="(item, key) in 12">
                             <m-product></m-product>
                         </div>
                     </div>
                 </m-floor>
+                <m-divider text="我也是有底线的"></m-divider>
             </div>
         </m-scroll>
     </div>
@@ -54,7 +46,7 @@
     import centerJdFinancial from './index-jd-financial'
 
     export default {
-        data() {
+        data () {
             return {
                 scroll: {
                     currentY: 0
@@ -66,21 +58,21 @@
             }
         },
         computed: {
-            headerClasses() {
+            headerClasses () {
                 let arrClasses = []
                 arrClasses.push('center-header')
                 if (this.scroll.currentY < -120)
                     arrClasses.push('border-1px-bottom')
                 return arrClasses.join(' ')
             },
-            headerBackground() {
+            headerBackground () {
                 let opacity = 0
                 if (this.scroll.currentY < 0) {
                     opacity = parseFloat(Math.abs(this.scroll.currentY) / 120)
                 }
                 return `RGBA(255,255,255,${opacity})`
             },
-            headerImgVisible() {
+            headerImgVisible () {
                 if (this.scroll.currentY < -120)
                     return true
             }
@@ -92,8 +84,8 @@
             centerJdFinancial
         },
         methods: {
-            handleScroll(e) {
-                this.scroll.currentY = e.y;
+            handleScroll (e) {
+                this.scroll.currentY = e.y
             }
         }
     }
@@ -159,12 +151,12 @@
                 display: flex;
                 flex-wrap: wrap;
                 .recommend-item {
-                    flex-basis:  calc(~"50% - @{font-size-small} / 2");
+                    flex-basis: calc(~"50% - @{font-size-small} / 2");
                     flex-grow: 0;
-                    &:nth-child(2n + 1){
+                    &:nth-child(2n + 1) {
                         margin: 0 @font-size-small / 2 @font-size-small 0;
                     }
-                    &:nth-child(2n){
+                    &:nth-child(2n) {
                         margin: 0 0 @font-size-small @font-size-small / 2;
                     }
                 }

@@ -5,6 +5,9 @@ import mTabItem from './packages/m-tab-item/index.js'
 import mSwipe from './packages/m-swipe/index.js'
 import mSwipeItem from './packages/m-swipe-item/index.js'
 import mProduct from './packages/m-product/index.js'
+import mDivider from './packages/m-divider/index.js'
+import mCell from './packages/m-cell/index.js'
+import mCellGroup from './packages/m-cell-group/index.js'
 
 
 const version = '1.0.0'
@@ -19,6 +22,9 @@ const install = function (Vue, config = {}) {
     Vue.component(mSwipe.name, mSwipe)
     Vue.component(mSwipeItem.name, mSwipeItem)
     Vue.component(mProduct.name, mProduct)
+    Vue.component(mDivider.name, mDivider)
+    Vue.component(mCell.name, mCell)
+    Vue.component(mCellGroup.name, mCellGroup)
 }
 
 export default {
