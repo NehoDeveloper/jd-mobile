@@ -5,6 +5,7 @@
             <slot></slot>
         </div>
         <div class="cell-right">
+            <slot name="icon-right"></slot>
             <span>{{value}}</span>
             <i class="iconfont">&#xe62a;</i>
         </div>
@@ -39,12 +40,13 @@
             align-items: center;
         }
         .cell-right {
-            position: absolute;
-            top: 0;
-            right: @font-size-small;
-            height: 100%;
             display: flex;
+            flex-grow: 0;
             align-items: center;
+            padding-right:@font-size-small;
+            span{
+                color:@sub-color;
+            }
             i {
                 font-size: @font-size-small * 2;
                 color: @sub-color;
