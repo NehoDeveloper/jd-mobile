@@ -7,7 +7,6 @@ jd-mobile
  + vuex 应用状态管理容器，解决组件作用域封闭问题
  + vue-router 单页面路由插件，实现组件的切换
  + axios http封装库，基于ES6简洁的api，适用于客户端和服务端
- + vux UI库
  + mockjs 基于前端的数据mock，使前端独立于后端开发
  + moment 时间处理库
  + less css预处理语言，解决css非编程语言带来的问题
