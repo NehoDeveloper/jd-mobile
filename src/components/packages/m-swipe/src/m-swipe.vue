@@ -54,23 +54,23 @@
                 this.nodesLength = nodes.length
                 return nodes
             },
-            setNodesStyle() {
+            setNodesStyle(duration) {
                 const nodes = this.getChildNodes()
                 for (let i = 0; i < nodes.length; i++) {
-                    nodes[i].style.transition = `all 250ms`
                     nodes[i].style.transform = `translate3d(${(i - this.currentIndex) * this.width}px, 0px, 0px)`
+                    nodes[i].style.transition = `all ${duration}ms`
                 }
             },
             startSwipe() {
                 this.clearSwipe()
-                this.setNodesStyle()
+                this.setNodesStyle(0)
                 this.timer = setInterval(() => {
                     if (this.currentIndex < this.nodesLength - 1) {
                         this.currentIndex += 1
                     } else {
                         this.currentIndex = 0
                     }
-                    this.setNodesStyle()
+                    this.setNodesStyle(250)
                 }, this.duration)
             },
             clearSwipe() {

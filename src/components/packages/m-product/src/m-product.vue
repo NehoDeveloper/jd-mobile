@@ -76,7 +76,7 @@
             color: @content-color;
             span{
                 flex-grow: 0;
-                font-size: @font-size-small;
+                font-size: @font-size-normal;
             }
         }
         .product-similar{
@@ -86,7 +86,7 @@
             span{
                 display: block;
                 padding:@font-size-small / 2;
-                font-size: @font-size-small;
+                font-size: @font-size-normal;
                 border:1px solid #bfbfbf;
                 color:#686868;
             }

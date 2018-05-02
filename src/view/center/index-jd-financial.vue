@@ -25,7 +25,7 @@
             </div>
             <div class="section-cell">
                 <div class="cell-left">
-                    <i class="iconfont" style="background: #FFE642">&#xe607;</i>
+                    <i class="iconfont" style="background: #FFE642">&#xe632;</i>
                     <span>小金库</span>
                 </div>
                 <div class="cell-mid">

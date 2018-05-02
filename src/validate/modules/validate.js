@@ -25,6 +25,11 @@ export class Validate {
         return fn(g)
     }
 
+    toast () {
+        this.errorMsg && console.log(this.errorMsg)
+        return this
+    }
+
     check (f) {
         const arrItems = this._getItems()
         for (let c = 0; c < arrItems.length; c++) {
@@ -32,10 +37,11 @@ export class Validate {
             let arrTypes = this._getTypes(item)
             for (let d = 0; d < arrTypes.length; d++) {
                 let type = arrTypes[d]
-                let result = this._callRule(type, f)
+                let result = this._callRule(type, f[item])
                 if (!result) {
                     this.success = false
                     this.errorMsg = this._getErrorMsg(`${item}.${type}`)
+                    this.config.toast && this.toast()
                     return this
                 }
             }

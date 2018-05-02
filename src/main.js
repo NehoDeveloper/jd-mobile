@@ -7,12 +7,11 @@ import './static/less/iconfont.less'
 import './static/less/border-1px.less'
 import {router} from './router'
 import plugin from './plugin'
-import vuex from './vuex'
+import logic from './logic'
 import './service/mock'
 import components from './components'
 
 Vue.use(plugin)
-Vue.use(vuex)
 Vue.use(components)
 
 Vue.config.productionTip = false
@@ -21,6 +20,7 @@ Vue.config.productionTip = false
 new Vue({
     el: '#app',
     router,
+    store:logic,
     components: {App},
     template: '<App/>'
 })

@@ -8,6 +8,7 @@ import mProduct from './packages/m-product/index.js'
 import mDivider from './packages/m-divider/index.js'
 import mCell from './packages/m-cell/index.js'
 import mCellGroup from './packages/m-cell-group/index.js'
+import mLoading from './packages/m-loading/index.js'
 
 
 const version = '1.0.0'
@@ -25,6 +26,8 @@ const install = function (Vue, config = {}) {
     Vue.component(mDivider.name, mDivider)
     Vue.component(mCell.name, mCell)
     Vue.component(mCellGroup.name, mCellGroup)
+
+    Vue.$mLoading = Vue.prototype.$mLoading = mLoading
 }
 
 export default {

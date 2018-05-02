@@ -13,6 +13,9 @@
             </div>
         </div>
         <m-scroll styles="height:100%;" @scroll="handleScroll">
+            <div class="center-top" slot="top">
+                <i class="iconfont" :style="centerTopIStyle">&#xe610;</i>
+            </div>
             <div class="center-view">
                 <center-account></center-account>
                 <center-order-coupon></center-order-coupon>
@@ -20,9 +23,9 @@
                 <center-jd-financial></center-jd-financial>
                 <m-floor :options="specialFloorOptions">
                     <m-tab>
-                        <m-tab-item active>精选推荐</m-tab-item>
+                        <m-tab-item>精选推荐</m-tab-item>
                         <m-tab-item>我的卧室</m-tab-item>
-                        <m-tab-item>单车部落</m-tab-item>
+                        <m-tab-item active>单车部落</m-tab-item>
                         <m-tab-item>恋上床</m-tab-item>
                         <m-tab-item>办公神器</m-tab-item>
                         <m-tab-item>轮滑滑板</m-tab-item>
@@ -75,6 +78,11 @@
             headerImgVisible () {
                 if (this.scroll.currentY < -120)
                     return true
+            },
+            centerTopIStyle () {
+                if (this.scroll.currentY > 0) {
+                    return `margin-top:${this.scroll.currentY / 5}px;font-size:${20 + this.scroll.currentY / 2}px`
+                }
             }
         },
         components: {
@@ -144,6 +152,14 @@
                         margin-left: @font-size-small * 2;
                     }
                 }
+            }
+        }
+        .center-top{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i{
+                color:@sub-color;
             }
         }
         .center-view {

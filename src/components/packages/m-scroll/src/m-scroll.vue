@@ -3,6 +3,9 @@
         <div class="scroll-view">
             <slot></slot>
         </div>
+        <div class="m-scroll-top">
+            <slot name="top"></slot>
+        </div>
     </div>
 </template>
 
@@ -62,6 +65,14 @@
             top:0;
             left:0;
             width:100%;
+            z-index: 6;
+        }
+        &-top{
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            z-index: 5
         }
     }
 </style>
